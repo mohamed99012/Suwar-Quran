@@ -1,0 +1,113 @@
+body {
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-style: normal;
+  background-color: var(--main-color);
+}
+/* Main Rules */
+:root {
+  --main-color: #6bb77b;
+  --black-color: #172d13;
+  --white-color: white;
+  --third-color: #d76f30;
+}
+/* All Rules */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Container On All Screens */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #6bb77b;
+}
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+/* Large Screens */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
+/* Medium Screens */
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    width: 700px;
+  }
+}
+/* Small Screens */
+@media (max-width: 767px) {
+  .container {
+    margin: 0 7px;
+    width: calc(100% - 14px);
+  }
+}
+/* End Container */
+/* Start Main Head */
+header {
+  display: flex;
+  justify-content: center;
+  /* background-color: var(--white-color); */
+  align-items: center;
+  position: relative;
+}
+header::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #172d1350;
+}
+header h3 {
+  font-size: 30px;
+  margin-left: 10px;
+  color: var(--white-color);
+}
+header img {
+  width: 90px;
+  height: 90px;
+}
+/* End Header */
+/* Start Surah Item */
+.container .suwar {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.container .suwar .surah {
+  background-color: var(--third-color);
+  border-radius: 7px;
+  font-size: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.container .suwar .surah div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .suwar .surah div:not(:last-child) {
+  border-bottom: 1px solid var(--black-color);
+}
+.container .suwar .surah div span {
+  display: block;
+  flex: 1;
+}
+.container .suwar .surah div span:first-child {
+  color: var(--black-color);
+  text-align: center;
+}
+.container .suwar .surah div span:last-child {
+  background-color: white;
+  margin-right: 20px;
+  text-align: center;
+}
+/* End Surah Item */
